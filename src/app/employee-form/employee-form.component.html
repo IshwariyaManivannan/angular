@@ -1,0 +1,46 @@
+<div class="mainpage">
+    <app-header></app-header>
+    <div class="heading">
+        <h1><b>EMPLOYEE FORM</b></h1>
+    </div>
+    <form [formGroup]="empform">
+        <div class="container">
+            <div class="form-group">
+                <label><b>Firstname</b></label>
+                <input   type="text" class="form-control" formControlName="firstname" >
+                <div *ngIf="firstname?.touched  || message==='empty'">
+                   <small *ngIf="firstname?.errors?.['required']" class="text-danger">Firstname is required</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname"><b>Lastname</b></label>
+                <input  type="text" formControlName="lastname" class="form-control">
+                <div *ngIf="lastname?.touched || message1==='empty'">
+                    <small *ngIf="lastname?.errors?.['required']" class="text-danger"> Lastname is required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="city"><b>City</b></label>
+                <input  type="text" formControlName="city" required>
+                <div *ngIf="city?.touched || message2==='empty'">
+                    <small *ngIf="city?.errors?.['required']" class="text-danger">City is required</small>
+                </div>
+            </div>
+
+            <div>
+                <label for="phonenumber"><b>Phone Number</b></label>
+                <input  type="number" formControlName="phonenumber" required>
+                <div *ngIf="phonenumber?.touched || message3 ==='empty'">
+                    <small *ngIf="phonenumber?.errors?.['required']" class="text-danger">Phonenumber is required</small>
+                </div>
+            </div>
+
+
+            <div>
+                <button type="submit" (click)="submitForm()">Submit</button>
+            </div>
+
+        </div>
+    </form>
+</div>

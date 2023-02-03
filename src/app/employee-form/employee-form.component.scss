@@ -1,0 +1,58 @@
+input[type=text], input[type=number] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: right;
+  }
+.mainpage {
+    padding: 16px;
+}
+label{
+    display: inline-block;
+    // float: left;
+    clear: left;
+    width: 250px;
+    // text-align: right;
+}
+input {
+    display: inline-block;
+    // float: left;
+    
+}
+button{
+    margin-top: 2%;
+    // color: white;
+    padding: 14px 20px;
+    // margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    border-radius: 5px;
+    margin-left: 33%;
+    
+}
+button:hover{
+    background-color: rgb(221, 218, 218);
+}
+small{
+    margin-left: 23%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container{
+    margin-left: 28%;
+    margin-top: 5%;
+    // margin: 0;
+    // align-items: center;
+    // padding: 5%;
+}
+.heading{
+    margin-left: 20%;
+}

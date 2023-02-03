@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    
+}
+.logout{
+    margin-left: 80%;
+}
+button{
+    // margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 8px;
+}
+.det{
+    margin-left: 10px;
+}
+.form{
+    margin-left: 10px;
+}
+button:hover{
+    background-color: rgb(211, 209, 209);
+}

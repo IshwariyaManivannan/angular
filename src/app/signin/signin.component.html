@@ -1,0 +1,56 @@
+<form [formGroup]="signinForm">
+   
+  
+    <div class="container">
+      <label for="mail"><b>Email</b></label>
+      <input [class.is-invalid]="mail?.invalid && mail?.touched" type="text" placeholder="Enter Email" formControlName="mail" class="form-control" required>
+      <div *ngIf="(mail?.invalid && mail?.touched) || mail?.dirty">
+        <small *ngIf="mail?.errors?.['required']" class="text-danger">Email is required</small>
+        <small *ngIf="mail?.errors?.['pattern']" class="text-danger">Please enter valid email</small>
+        <small *ngIf="message==='invalidUser'" class="text-danger">Invalid username</small>
+      </div>
+      <ng-container *ngIf="message ==='invalidUser'">
+        <div><h1 class="text-danger">Invalid username </h1></div>
+      </ng-container>
+      
+      <label for="psw"><b>Password</b></label>
+      <div class="input">
+      <input [class.is-invalid]="password?.invalid && password?.touched"  [type]="fieldTextType ? 'text' : 'password'" type="password"  placeholder="Enter Password" formControlName="password" required>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <i
+            class="fa"
+            [ngClass]="{
+              'fa-eye-slash': !fieldTextType,
+              'fa-eye': fieldTextType
+            }"
+            (click)="toggleFieldTextType()"
+          ></i>
+        </span>
+      </div>
+      <div *ngIf="password?.touched || password?.dirty">
+        <small *ngIf="password?.errors?.['required']" class="text-danger">Password is required</small>
+      </div>
+      <ng-container *ngIf="message ==='invalid'">
+        <div><h1 class="text-danger">Invalid password</h1></div>
+      </ng-container>
+      
+    
+
+      
+      <button type="submit" (click)="login()">Login</button>
+    </div>
+
+    <div class="signup">
+      <small>Don't Have Account?<a [routerLink]="['/signup']">SignUp</a></small>
+      
+    </div>
+    <!-- <ng-container *ngIf="message ==='Logged in'">
+      <div><h1>Logged In</h1></div>
+    </ng-container> -->
+ 
+
+
+
+</form>

@@ -1,0 +1,36 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 20%;
+    margin-top:3% ;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+    
+  }
+  button{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    // border: 1px solid #dddddd;
+    // text-align: left;
+    padding: 5px;
+  }
+.buttonD{
+   margin-left: 5%;
+}
+button:hover{
+  background-color: rgb(197, 196, 196);
+}
+h1{
+  margin-left: 20%;
+}
+

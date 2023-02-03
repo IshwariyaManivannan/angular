@@ -1,0 +1,25 @@
+<div class="listContainer">
+    <app-header></app-header>
+    <h1><b>EMPLOYEE DETAILS</b></h1>
+   <table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>City</th>
+        <th>Phonenumber</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let data of data; let i=index">
+        <td>{{data.FirstName}}</td>
+        <td>{{data.LastName}}</td>
+        <td>{{data.City}}</td>
+        <td>{{data.phonenumber}}</td>
+        <td>
+        
+        <button class=buttonE (click)="edit(data)">Edit</button>
+        <button class=buttonD (click)="delete(i,data)">Delete</button>
+        
+        </td>
+    </tr>
+   </table>
+</div>

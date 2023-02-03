@@ -1,0 +1,16 @@
+<div class="otp-container">
+
+    <div class="inside-div">
+    <h1>Enter the OTP </h1>
+    <ngx-otp-input [config]="otpInputConfig" (otpChange)="handeOtpChange($event)" (fill)="handleFillEvent($event)">
+    </ngx-otp-input>
+    
+    <ng-container *ngIf="message==='verified'">
+        <div> <h1>OTP verified</h1> </div>
+    </ng-container>
+    <ng-container *ngIf="message==='invalid'">
+        <div><h1>Invalid</h1></div>
+    </ng-container>
+    
+</div>
+</div>
