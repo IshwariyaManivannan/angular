@@ -9,12 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { SigninComponent } from './signin/signin.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EmpListComponent } from './emp-list/emp-list.component';
 import { OtpVerifyComponent } from './otp-verify/otp-verify.component';
 import { NgxOtpInputModule } from 'ngx-otp-input';
 import { HeaderComponent } from './header/header.component';
+import { AuthtokenInterceptor } from './authtoken.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     NgxOtpInputModule
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthtokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

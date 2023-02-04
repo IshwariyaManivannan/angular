@@ -16,12 +16,6 @@ export class AppComponent implements OnInit {
 }
   ngOnInit() {
    
-    if(localStorage.getItem('email')===null){
-      this.router.navigate([''])
-     }
-     else{
-      this.router.navigate(['/emp-list'])
-     }
   }
   
 }

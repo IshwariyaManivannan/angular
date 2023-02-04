@@ -11,16 +11,16 @@ import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
 {
-  path:'app',
-  component:AppComponent,
-  // redirectTo: '/emp-list',
+  path:'',
+  redirectTo: '/emp-list',
+  pathMatch: "full"
 },
 {
   path:'signup',
   component:SignupComponent
 },
 {
-  path:'',
+  path:'login',
   component:SigninComponent,
   // canActivate:[testCanActivate]
 },

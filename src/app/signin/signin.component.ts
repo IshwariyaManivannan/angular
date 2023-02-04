@@ -26,15 +26,19 @@ export class SigninComponent implements OnInit {
   get password() { return this.signinForm.get('password') }
   message: any
   mailId: any
+  token:any
   login() {
     this.dataService.checkMail(this.signinForm.value).subscribe((d) => {
       this.message = d.message
-
+       console.log(d)
+       this.token=d.token
       if (this.message === 'Logged in') {
         this.mailId = this.signinForm.value.mail
         localStorage.setItem('boolValue', 'true')
         localStorage.setItem('email', this.mailId)
         this.router.navigate(['/emp-form'])
+       localStorage.setItem('token',this.token)
+        
       }
     })
   }
